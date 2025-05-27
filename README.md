@@ -1,91 +1,76 @@
-<h1>📈S&P 500 Daily Movement Prediction using Machine Learning</h1>
-This project focuses on predicting whether the S&P 500 index will go up or down the next day, based on historical daily trading data. Using machine learning, particularly classification models, we aim to identify trends in price movement to help with basic market sentiment forecasting.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>S&P 500 Daily Prediction Project</title>
+</head>
+<body style="font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px;">
 
-💡 Objective
-To build a predictive model that takes historical S&P 500 data and forecasts whether the market will close higher or lower the next day.
+  <h1>📈 S&P 500 Daily Movement Prediction using Machine Learning</h1>
 
-📊 Data Source
-Source: Yahoo Finance API via yfinance
+  <p>This Jupyter notebook predicts whether the <strong>S&P 500 index</strong> will go up or down the next day using historical data and a binary classification approach. It uses basic machine learning techniques to model stock trends.</p>
 
-Ticker: ^GSPC (S&P 500 Index)
+  <h2>💡 Objective</h2>
+  <p>To forecast the next day's price movement of the S&P 500 Index using historical trading data.</p>
 
-Date Range: Full available history (from 1927 to present)
+  <h2>⚙️ Tech Stack</h2>
+  <ul>
+    <li>Python 3.10+</li>
+    <li>Jupyter Notebook</li>
+    <li>Pandas</li>
+    <li>Numpy</li>
+    <li>Matplotlib</li>
+    <li>scikit-learn</li>
+    <li>yfinance</li>
+  </ul>
 
-Frequency: Daily
+  <h2>📥 Dataset</h2>
+  <p>Data is pulled using the Yahoo Finance API via the <code>yfinance</code> Python package.</p>
+  <p><strong>Ticker:</strong> ^GSPC (S&P 500 Index)</p>
 
-🛠️ Features
-Open: Opening price
+  <h2>🚀 How to Run</h2>
+  <p>Make sure you have Python and Jupyter Notebook installed. Then follow these steps:</p>
 
-High: Highest price during the day
+  <pre><code># 1. Create and activate a virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-Low: Lowest price during the day
+# 2. Install required packages
+pip install pandas numpy matplotlib scikit-learn yfinance notebook
 
-Close: Closing price
+# 3. Launch Jupyter Notebook
+jupyter notebook
 
-Volume: Number of shares traded
+# 4. Open the notebook file (e.g., sp500_prediction.ipynb) and run cells one by one
+</code></pre>
 
-Tomorrow: Next day's closing price
+  <h2>⚠️ Having Trouble with yfinance?</h2>
+  <p>If <code>yfinance</code> fails to fetch data (due to connection or update issues), here are two alternatives:</p>
 
-Target: Binary indicator (1 if the next day closes higher than today, 0 otherwise)
+  <ol>
+    <li>
+      Use <a href="https://www.kaggle.com/datasets/camnugent/sandp500" target="_blank">this Kaggle S&P 500 dataset</a>.
+      <ul>
+        <li>Download the CSV</li>
+        <li>Replace the yfinance data import code with <code>pd.read_csv("your_file.csv")</code></li>
+      </ul>
+    </li>
+    <li>
+      Try <a href="https://pypi.org/project/yahoo-finance-interface/" target="_blank">Yahoo Finance Interface</a> as a backup API.
+    </li>
+  </ol>
 
-📌 Steps Involved
-Data Extraction
+  <h2>📊 Features Used</h2>
+  <ul>
+    <li>Open, High, Low, Close, Volume</li>
+    <li>Tomorrow’s close price (shifted)</li>
+    <li>Target (1 if Tomorrow > Today’s Close, else 0)</li>
+  </ul>
 
-Fetched using yfinance API.
+  <h2>❤️ Author</h2>
+  <p>Made with curiosity by <strong>Swetha</strong>, a passionate AI graduate exploring financial data with ML.</p>
+  <p>If you found this interesting or want to collaborate, feel free to connect!</p>
 
-Retrieved the full historical daily data using history(period="max").
-
-Data Preprocessing
-
-Removed unnecessary columns (Dividends, Stock Splits).
-
-Shifted Close column by one day to create the Tomorrow feature.
-
-Created a binary Target based on comparison of Tomorrow vs Close.
-
-Exploratory Analysis
-
-Line plots of historical closing prices.
-
-Target distribution analysis.
-
-Modeling
-(This section can be updated once models are trained — e.g., RandomForest, Logistic Regression, etc.)
-
-🧠 Machine Learning Approach
-Target variable: Whether the S&P 500 will go up the next day (1) or not (0)
-
-Model Type: Classification (to be added)
-
-Evaluation Metrics: Accuracy, Precision, Recall, F1-score (to be added)
-
-📦 Dependencies
-bash
-Copy
-Edit
-pandas
-numpy
-yfinance
-matplotlib
-scikit-learn
-🔍 Usage
-python
-Copy
-Edit
-import yfinance as yf
-sp500 = yf.Ticker("^GSPC").history(period="max")
-# Further preprocessing and modeling steps follow
-📁 Project Structure
-cpp
-Copy
-Edit
-📂 S&P-500-Prediction/
-├── sp500_prediction.ipynb
-├── README.md
-├── requirements.txt
-└── models/
-    └── model.pkl (optional)
-❤️ About Me
-Built with love by Swetha, powered by curiosity and coffee ☕.
-If you like this project or have suggestions, feel free to connect!
-
+</body>
+</html>
