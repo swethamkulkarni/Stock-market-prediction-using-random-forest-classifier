@@ -1,4 +1,4 @@
-📈 <h1>S&P 500 Daily Movement Prediction using Machine Learning</h1>
+<h1>📈S&P 500 Daily Movement Prediction using Machine Learning</h1>
 This project focuses on predicting whether the S&P 500 index will go up or down the next day, based on historical daily trading data. Using machine learning, particularly classification models, we aim to identify trends in price movement to help with basic market sentiment forecasting.
 
 💡 Objective
