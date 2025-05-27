@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>S&P 500 Daily Prediction Project</title>
+ 
 </head>
 <body style="font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px;">
 
